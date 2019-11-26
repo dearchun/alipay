@@ -69,7 +69,7 @@ func LoadPrivateKey(prikeyPath string) (*rsa.PrivateKey, error) {
 }
 
 func Sign(priKey *rsa.PrivateKey, data []byte) (string, error) {
-	hash := crypto.SHA1
+	hash := crypto.SHA256
 	h := hash.New()
 	h.Write(data)
 	hashed := h.Sum(nil)
@@ -88,7 +88,7 @@ func Verify(pubKey *rsa.PublicKey, data []byte, sig string) error {
 		return err
 	}
 
-	hash := crypto.SHA1
+	hash := crypto.SHA256
 	h := hash.New()
 	h.Write(data)
 	hashed := h.Sum(nil)
