@@ -84,7 +84,7 @@ func (m *Merchant) BizRequest(url, method, notifyUrl string, bizData map[string]
 		"timestamp":   time.Now().Format("2006-01-02 15:04:05"),
 		"version":     "1.0",
 		"biz_content": string(bizContent),
-		"sign_type":   "RSA",
+		"sign_type":   "RSA2",
 	}
 	if len(notifyUrl) > 0 {
 		req["notify_url"] = notifyUrl
